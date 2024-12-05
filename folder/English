@@ -1,15 +1,14 @@
-# Usando uma imagem base do Python
-FROM python:3.10-slim
+DROP TABLE IF EXISTS "musicas";
 
-# Instalando dependências
-RUN pip install fastapi uvicorn asyncpg
+CREATE TABLE "musicas" (
+    "id" SERIAL PRIMARY KEY,
+    "nome" VARCHAR(255) NOT NULL,
+    "cantor" VARCHAR(255) NOT NULL,
+    "album" VARCHAR(255) NOT NULL,
+    "duracao" VARCHAR(255) NOT NULL,
+    "gostei" BOOLEAN
+);
 
-# Definindo o diretório de trabalho
-WORKDIR /app
-
-# Copiando o código para o container
-COPY main.py .
-COPY ./db ./db
-
-# Comando para rodar a aplicação
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+INSERT INTO "musicas" ("nome", "cantor", "album", "duracao", "gostei") VALUES ('Última saudade', 'Henrique e Juliano', 'Manifesto 2', '2:17', false);
+INSERT INTO "musicas" ("nome", "cantor", "album", "duracao", "gostei") VALUES ('Ciumeira', 'Marilia Mendonça', 'Todos os Cantos', '3:10', false);
+INSERT INTO "musicas" ("nome", "cantor", "album", "duracao", "gostei") VALUES ('Última noite', 'Léo Foguete', 'Obrigado Deus', '2:34', true);
