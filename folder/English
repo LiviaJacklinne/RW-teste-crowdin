@@ -1,25 +1,15 @@
-# GriffinBox
+# Usando uma imagem base do Python
+FROM python:3.10-slim
 
-O sistema proposto é um CRUD para gerênciamento de musicas
+# Instalando dependências
+RUN pip install fastapi uvicorn asyncpg
 
-## Tecnologias
+# Definindo o diretório de trabalho
+WORKDIR /app
 
-- Python
-- Flask
-- Postgress
-- Docker
+# Copiando o código para o container
+COPY main.py .
+COPY ./db ./db
 
-> _**Práticas**_
->
-> - CRUD
-> - API Rest
-> - Testes de API
-> - Container (docker-compose)
-> - Criptografia
-
-## Execução
-
-> _**Observação**_ <br>
->
-> 1. Para rodar o projeto local, instale as dependências executando `pip install -r requirements.txt` na raiz do projeto
-> 2. execute `flask run` na raiz do projeto
+# Comando para rodar a aplicação
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
