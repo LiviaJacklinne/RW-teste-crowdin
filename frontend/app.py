@@ -44,12 +44,12 @@ def adicionar_musica():
 # Rota para listar todas as musicas
 @app.route('/playlist', methods=['GET'])
 def listar_musicas():
-    response = requests.get(f'{API_BASE_URL}/api/v1/musicas/')
-    try:
-        musicas = response.json()
-    except:
-        musicas = []
-    return render_template('playlist.html', musicas=musicas)
+    # response = requests.get(f'{API_BASE_URL}/api/v1/musicas/')
+    # try:
+    #     musicas = response.json()
+    # except:
+    #     musicas = []
+    return render_template('playlist.html')
 
 # Rota para excluir uma musica
 @app.route('/excluir/<int:musica_id>', methods=['POST'])
