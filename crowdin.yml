@@ -1,3 +1,4 @@
 files:
-  - source: /traducao/*_json
-    translation: '%file_name%'
+  - source: /frontend/templates/home.html
+    translation: '%language%home.html'
+    multilingual: 1
