@@ -62,14 +62,15 @@ body {
 }
 
 /* Formulário */
-.container-form {
+.musicas {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.form-li {
+.musicas-li {
     margin-bottom: 0.8rem;
+    list-style: none;
 }
 
 .form-label {
