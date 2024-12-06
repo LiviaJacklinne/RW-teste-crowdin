@@ -1,162 +1,125 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+/* Estilização global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
 
-# C extensions
-*.so
+/* Navbar */
+.nav {
+    background-color: #4CAF50;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+}
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+.navbar-li {
+    list-style: none;
+}
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
+/* Hover no link */
+.nav-link:hover {
+    background-color: #fff;
+    color: #4CAF50;
+}
 
-# Translations
-*.mo
-*.pot
+/* Estilo para o link ativo (na página atual) */
+.nav-link.active {
+    background-color: #fff; /* Fundo branco */
+    color: #4CAF50; /* Texto verde */
+    pointer-events: none; /* Desativa o hover no link ativo */
+    border-radius: 5px; /* Bordas arredondadas */
+}
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-# Flask stuff:
-instance/
-.webassets-cache
+/* Formulário */
+.container-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Diminuímos o espaçamento entre os campos */
+}
 
-# Scrapy stuff:
-.scrapy
+.form-li {
+    margin-bottom: 0.5rem; /* Reduzimos a margem entre os campos */
+    list-style-type: none; /* Remove as bolinhas da lista */
+}
 
-# Sphinx documentation
-docs/_build/
+.form-label {
+    font-size: 0.9rem; /* Diminui o tamanho da fonte para compactar */
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.3rem; /* Diminui o espaçamento entre o label e o campo */
+}
 
-# PyBuilder
-.pybuilder/
-target/
+.form-control {
+    width: 100%;
+    padding: 0.5rem; /* Diminui o padding para tornar os campos mais compactos */
+    font-size: 0.9rem; /* Diminui o tamanho da fonte para compactar */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
 
-# Jupyter Notebook
-.ipynb_checkpoints
+.form-control:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
 
-# IPython
-profile_default/
-ipython_config.py
+.btn {
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
 
-# pyenv
-#   For a library or package, you might want to ignore these files since the code is
-#   intended to run in multiple environments; otherwise, check them in:
-# .python-version
+.btn:hover {
+    background-color: #45a049;
+}
 
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-# poetry
-#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
-#poetry.lock
-
-# pdm
-#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#pdm.lock
-#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
-#   in version control.
-#   https://pdm.fming.dev/latest/usage/project/#working-with-version-control
-.pdm.toml
-.pdm-python
-.pdm-build/
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
